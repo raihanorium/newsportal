@@ -17,6 +17,9 @@
             location="classpath:appSettings.properties"/>
     <mvc:annotation-driven/>
 
+    <!--static resources mapping-->
+    <mvc:resources mapping="/**" location="/static/"/>
+
     <!--message sources-->
     <bean class="org.springframework.context.support.ResourceBundleMessageSource"
           id="messageSource">
