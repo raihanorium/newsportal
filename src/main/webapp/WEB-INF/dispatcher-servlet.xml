@@ -26,4 +26,7 @@
             </list>
         </property>
     </bean>
+
+    <!--services-->
+    <bean id="storyService" class="com.raihanorium.newsportal.service.StoryServiceImpl"/>
 </beans>
