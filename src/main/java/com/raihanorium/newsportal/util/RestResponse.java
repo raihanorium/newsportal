@@ -1,13 +1,18 @@
 package com.raihanorium.newsportal.util;
 
+import com.raihanorium.newsportal.model.Story;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by ataul.raihan on 10/7/2017.
  */
+@XmlRootElement
+@XmlSeeAlso(Story.class) // TODO: Find a convenient way to render child object to xml
 public class RestResponse {
-    Object data = null;
+    List data = new ArrayList();
     private boolean error = false;
     private List<String> errorFields = new ArrayList<>();
     private List<String> messages = new ArrayList<>();
@@ -15,10 +20,11 @@ public class RestResponse {
     public RestResponse() {
     }
 
-    public RestResponse(Object data) {
+    public RestResponse(List data) {
         this.data = data;
     }
 
+    @XmlAttribute
     public boolean isError() {
         return error;
     }
@@ -27,6 +33,8 @@ public class RestResponse {
         this.error = error;
     }
 
+    @XmlElementWrapper(name = "errorFields")
+    @XmlElement(name = "errorField")
     public List<String> getErrorFields() {
         return errorFields;
     }
@@ -35,6 +43,8 @@ public class RestResponse {
         this.errorFields = errorFields;
     }
 
+    @XmlElementWrapper(name = "messages")
+    @XmlElement(name = "message")
     public List<String> getMessages() {
         return messages;
     }
@@ -47,11 +57,17 @@ public class RestResponse {
         this.messages.add(errorMessage);
     }
 
-    public Object getData() {
+    @XmlElementWrapper(name = "content")
+    @XmlElement(name = "data")
+    public List getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(List data) {
         this.data = data;
+    }
+
+    public void addData(Object data) {
+        this.data.add(data);
     }
 }

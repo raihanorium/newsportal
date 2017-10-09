@@ -34,7 +34,7 @@ public class StoryController {
     public RestResponse get(@PathVariable Long id) {
         RestResponse restResponse = new RestResponse();
         try {
-            restResponse.setData(storyService.get(id));
+            restResponse.addData(storyService.get(id));
         } catch (Exception e) {
             restResponse.setError(true);
             restResponse.addMessage(e.getMessage());
@@ -46,7 +46,7 @@ public class StoryController {
     public RestResponse create(@RequestBody Story story) {
         RestResponse restResponse = new RestResponse();
         try {
-            restResponse.setData(storyService.create(story));
+            restResponse.addData(storyService.create(story));
         } catch (Exception e) {
             restResponse.setError(true);
             restResponse.addMessage(e.getMessage());

@@ -1,10 +1,15 @@
 package com.raihanorium.newsportal.model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
 /**
  * Created by ataul.raihan on 10/7/2017.
  */
+@XmlRootElement
+@XmlType(propOrder = {"title", "author", "body"})
 public class Story implements Serializable {
     private Long id;
     private String title;
@@ -14,6 +19,7 @@ public class Story implements Serializable {
     public Story() {
     }
 
+    @XmlAttribute
     public Long getId() {
         return id;
     }
