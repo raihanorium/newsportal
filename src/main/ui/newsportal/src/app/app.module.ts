@@ -6,12 +6,14 @@ import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app-routes";
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListPageComponent } from './pages/list-page/list-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomePageComponent,
-        NavbarComponent
+        NavbarComponent,
+        ListPageComponent
     ],
     imports: [
         BrowserModule,
