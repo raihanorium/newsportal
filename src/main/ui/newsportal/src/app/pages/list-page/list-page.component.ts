@@ -9,6 +9,7 @@ import {ToastsManager} from "ng2-toastr";
     styleUrls: ['./list-page.component.css']
 })
 export class ListPageComponent implements OnInit {
+    private busy:any;
     private newsList:[any];
 
     constructor(private newsService:NewsService, public toastr:ToastsManager, vcr:ViewContainerRef) {
@@ -16,7 +17,7 @@ export class ListPageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.newsService.getAllJson().then((newsList) => {
+        this.busy = this.newsService.getAllJson().then((newsList) => {
             if (newsList.error) {
                 this.toastr.error(newsList.messages[0]);
             } else {

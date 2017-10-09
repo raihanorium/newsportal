@@ -13,6 +13,7 @@ import {HttpModule} from "@angular/http";
 import "rxjs/Rx";
 import {ToastModule} from "ng2-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BusyModule} from "angular2-busy";
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        ToastModule.forRoot()
+        ToastModule.forRoot(),
+        BusyModule
     ],
     providers: [NewsService],
     bootstrap: [AppComponent]
