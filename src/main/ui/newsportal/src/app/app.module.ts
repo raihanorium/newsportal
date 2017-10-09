@@ -7,6 +7,7 @@ import {appRoutes} from "./app-routes";
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -17,7 +18,9 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes, {useHash: true})
+        RouterModule.forRoot(appRoutes, {useHash: true}),
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
