@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NewsService} from "../../services/news.service";
+import {ViewContainerRef} from "@angular/core";
+import {ToastsManager} from "ng2-toastr";
 
 @Component({
     selector: 'app-list-page',
@@ -7,15 +9,22 @@ import {NewsService} from "../../services/news.service";
     styleUrls: ['./list-page.component.css']
 })
 export class ListPageComponent implements OnInit {
+    private newsList:[any];
 
-    constructor(private newsService:NewsService) {
+    constructor(private newsService:NewsService, public toastr:ToastsManager, vcr:ViewContainerRef) {
+        this.toastr.setRootViewContainerRef(vcr);
     }
 
     ngOnInit() {
         this.newsService.getAllJson().then((newsList) => {
-            console.log(newsList);
+            if (newsList.error) {
+                this.toastr.error(newsList.messages[0]);
+            } else {
+                this.newsList = newsList.data;
+            }
         }).catch(error => {
             console.error(error);
+            this.toastr.error('Could not communicate to server. See console for more details.');
         });
     }
 

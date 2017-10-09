@@ -7,17 +7,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>This is a news</td>
+    <tr *ngFor="let news of newsList">
+        <td>{{news.title}}</td>
     </tr>
-    <tr>
-        <td>This is another news</td>
-    </tr>
-    <tr>
-        <td>This is another news</td>
-    </tr>
-    <tr>
-        <td>This is another news</td>
+
+    <tr *ngIf="!newsList">
+        <td>No news yet</td>
     </tr>
     </tbody>
 </table>

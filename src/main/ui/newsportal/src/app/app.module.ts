@@ -11,6 +11,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NewsService} from "./services/news.service";
 import {HttpModule} from "@angular/http";
 import "rxjs/Rx";
+import {ToastModule} from "ng2-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -21,10 +23,12 @@ import "rxjs/Rx";
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
         FormsModule,
         ReactiveFormsModule,
-        HttpModule
+        HttpModule,
+        ToastModule.forRoot()
     ],
     providers: [NewsService],
     bootstrap: [AppComponent]
