@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NewsService} from "../../services/news.service";
 
 @Component({
     selector: 'app-list-page',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-    constructor() {
+    constructor(private newsService:NewsService) {
     }
 
     ngOnInit() {
+        this.newsService.getAllJson().then((newsList) => {
+            console.log(newsList);
+        }).catch(error => {
+            console.error(error);
+        });
     }
 
 }

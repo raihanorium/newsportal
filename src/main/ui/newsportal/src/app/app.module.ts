@@ -8,6 +8,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NewsService} from "./services/news.service";
+import {HttpModule} from "@angular/http";
+import "rxjs/Rx";
 
 @NgModule({
     declarations: [
@@ -20,9 +23,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         BrowserModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpModule
     ],
-    providers: [],
+    providers: [NewsService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
