@@ -43,7 +43,11 @@ public class StoryServiceImpl implements StoryService {
 
     @Override
     public Story create(Story story) {
-        this.stories.put(story.getId(), story);
+        this.stories.put(generateNewId(), story);
         return story;
+    }
+
+    private Long generateNewId() {
+        return (long) this.stories.size() + 1;
     }
 }
