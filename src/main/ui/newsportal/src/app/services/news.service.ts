@@ -36,6 +36,20 @@ export class NewsService {
             });
     }
 
+    public getXml(id) {
+        var headers = new Headers();
+        headers.append("Accept", 'application/xml');
+
+        return this.http.get(AppSettings.API_BASE + '/story/' + id, {headers: headers})
+            .map((resp:Response) => {
+                return resp;
+            })
+            .toPromise()
+            .catch((error:Response) => {
+                throw(error)
+            });
+    }
+
     public create(news) {
         var headers = new Headers();
         headers.append("Accept", 'application/json');

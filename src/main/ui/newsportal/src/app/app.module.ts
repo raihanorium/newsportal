@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BusyModule} from "angular2-busy";
 import { StoryHtmlPageComponent } from './pages/story-html-page/story-html-page.component';
 import { StoryJsonPageComponent } from './pages/story-json-page/story-json-page.component';
+import { StoryXmlPageComponent } from './pages/story-xml-page/story-xml-page.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { StoryJsonPageComponent } from './pages/story-json-page/story-json-page.
         NavbarComponent,
         ListPageComponent,
         StoryHtmlPageComponent,
-        StoryJsonPageComponent
+        StoryJsonPageComponent,
+        StoryXmlPageComponent
     ],
     imports: [
         BrowserModule,
