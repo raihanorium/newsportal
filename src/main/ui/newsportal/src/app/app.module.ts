@@ -17,6 +17,7 @@ import {BusyModule} from "angular2-busy";
 import { StoryHtmlPageComponent } from './pages/story-html-page/story-html-page.component';
 import { StoryJsonPageComponent } from './pages/story-json-page/story-json-page.component';
 import { StoryXmlPageComponent } from './pages/story-xml-page/story-xml-page.component';
+import { XmlPipe } from './pipes/xml.pipe';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { StoryXmlPageComponent } from './pages/story-xml-page/story-xml-page.com
         ListPageComponent,
         StoryHtmlPageComponent,
         StoryJsonPageComponent,
-        StoryXmlPageComponent
+        StoryXmlPageComponent,
+        XmlPipe
     ],
     imports: [
         BrowserModule,
