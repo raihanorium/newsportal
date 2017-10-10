@@ -15,6 +15,7 @@ import {ToastModule} from "ng2-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BusyModule} from "angular2-busy";
 import { StoryHtmlPageComponent } from './pages/story-html-page/story-html-page.component';
+import { StoryJsonPageComponent } from './pages/story-json-page/story-json-page.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { StoryHtmlPageComponent } from './pages/story-html-page/story-html-page.
         HomePageComponent,
         NavbarComponent,
         ListPageComponent,
-        StoryHtmlPageComponent
+        StoryHtmlPageComponent,
+        StoryJsonPageComponent
     ],
     imports: [
         BrowserModule,

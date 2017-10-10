@@ -11,7 +11,8 @@
     <tr *ngFor="let news of newsList">
         <td>{{news.title}}</td>
         <td>
-            <a [routerLink]="['/story/html', news.id]">html</a>
+            <a [routerLink]="['/story/html', news.id]">html</a> |
+            <a [routerLink]="['/story/json', news.id]">json</a>
         </td>
     </tr>
 
