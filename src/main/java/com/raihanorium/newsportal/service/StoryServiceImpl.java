@@ -43,7 +43,9 @@ public class StoryServiceImpl implements StoryService {
 
     @Override
     public Story create(Story story) {
-        this.stories.put(generateNewId(), story);
+        long newId = generateNewId();
+        story.setId(newId);
+        this.stories.put(newId, story);
         return story;
     }
 
