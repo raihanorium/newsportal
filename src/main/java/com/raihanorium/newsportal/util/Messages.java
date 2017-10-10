@@ -10,6 +10,8 @@ import java.util.Locale;
 
 /**
  * Created by ataul.raihan on 10/9/2017.
+ *
+ * This is an utility class to retrieve messages from .properties files. Currently, it doesn't support multi language.
  */
 @Component
 public class Messages {

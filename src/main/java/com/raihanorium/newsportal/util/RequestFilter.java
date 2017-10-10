@@ -7,6 +7,8 @@ import java.io.IOException;
 
 /**
  * Created by ataul.raihan on 10/9/2017.
+ *
+ * This class filters all the requests and allows or disallows requests based on application settings.
  */
 public class RequestFilter implements Filter {
     @Override

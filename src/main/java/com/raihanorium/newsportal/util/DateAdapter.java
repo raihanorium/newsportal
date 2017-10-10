@@ -6,6 +6,10 @@ import java.util.Date;
 
 /**
  * Created by ataul.raihan on 10/10/2017.
+ *
+ * This class helps format date fields when marshalling and unmarshalling xml.
+ *
+ * Usage: Add @XmlJavaTypeAdapter annotation to XML property and pass this adapter.
  */
 public class DateAdapter extends XmlAdapter<String, Date> {
     private String pattern = "dd/MM/yyyy";

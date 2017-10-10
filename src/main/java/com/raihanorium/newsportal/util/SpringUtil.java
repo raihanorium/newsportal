@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Created by ataul.raihan on 10/9/2017.
+ *
+ * This class is created so that Spring beans can be accessed by class name in Java context.
  */
 @Component
 public class SpringUtil implements ApplicationContextAware {
