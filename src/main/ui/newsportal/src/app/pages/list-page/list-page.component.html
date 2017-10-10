@@ -4,15 +4,19 @@
     <thead>
     <tr>
         <th>Title</th>
+        <th>Links</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let news of newsList">
         <td>{{news.title}}</td>
+        <td>
+            <a [routerLink]="['/story/html', news.id]">html</a>
+        </td>
     </tr>
 
     <tr *ngIf="!newsList">
-        <td>No news yet</td>
+        <td colspan="2" align="center">No news yet</td>
     </tr>
     </tbody>
 </table>

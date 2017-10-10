@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NewsService} from "../../services/news.service";
 import {ViewContainerRef} from "@angular/core";
 import {ToastsManager} from "ng2-toastr";
+import {AppSettings} from "../../app-settings";
 
 @Component({
     selector: 'app-list-page',
@@ -25,7 +26,7 @@ export class ListPageComponent implements OnInit {
             }
         }).catch(error => {
             console.error(error);
-            this.toastr.error('Could not communicate to server. See console for more details.');
+            this.toastr.error(AppSettings.API_COMMUNICATION_ERROR);
         });
     }
 

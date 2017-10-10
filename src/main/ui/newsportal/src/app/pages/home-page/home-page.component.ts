@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ToastsManager} from "ng2-toastr";
 import {NewsService} from "../../services/news.service";
 import {Router} from "@angular/router";
+import {AppSettings} from "../../app-settings";
 
 @Component({
     selector: 'app-home-page',
@@ -13,7 +14,12 @@ export class HomePageComponent implements OnInit {
     private busy:any;
     private createNewsForm:FormGroup;
 
-    constructor(private fb:FormBuilder, private newsService:NewsService, public toastr:ToastsManager, vcr:ViewContainerRef, private router:Router) {
+    constructor(private fb:FormBuilder,
+                private newsService:NewsService,
+                public toastr:ToastsManager,
+                vcr:ViewContainerRef,
+                private router:Router) {
+
         this.toastr.setRootViewContainerRef(vcr);
 
         this.createNewsForm = this.fb.group({
@@ -35,7 +41,7 @@ export class HomePageComponent implements OnInit {
             }
         }).catch(error => {
             console.error(error);
-            this.toastr.error('Could not communicate to server. See console for more details.');
+            this.toastr.error(AppSettings.API_COMMUNICATION_ERROR);
         });
     }
 }

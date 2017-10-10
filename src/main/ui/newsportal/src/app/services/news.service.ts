@@ -22,6 +22,20 @@ export class NewsService {
             });
     }
 
+    public getJson(id) {
+        var headers = new Headers();
+        headers.append("Accept", 'application/json');
+
+        return this.http.get(AppSettings.API_BASE + '/story/' + id, {headers: headers})
+            .map((resp:Response) => {
+                return resp.json();
+            })
+            .toPromise()
+            .catch((error:Response) => {
+                throw(error)
+            });
+    }
+
     public create(news) {
         var headers = new Headers();
         headers.append("Accept", 'application/json');

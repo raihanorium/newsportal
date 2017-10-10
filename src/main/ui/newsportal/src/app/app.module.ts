@@ -14,13 +14,15 @@ import "rxjs/Rx";
 import {ToastModule} from "ng2-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BusyModule} from "angular2-busy";
+import { StoryHtmlPageComponent } from './pages/story-html-page/story-html-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomePageComponent,
         NavbarComponent,
-        ListPageComponent
+        ListPageComponent,
+        StoryHtmlPageComponent
     ],
     imports: [
         BrowserModule,
