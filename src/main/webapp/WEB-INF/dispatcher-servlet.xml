@@ -14,7 +14,7 @@
     <context:component-scan base-package="com.raihanorium.newsportal"/>
     <context:annotation-config/>
     <context:property-placeholder
-            location="classpath:appSettings.properties"/>
+            location="classpath:appSettings.properties, classpath:validationMessages.properties"/>
     <mvc:annotation-driven/>
 
     <!--static resources mapping-->
@@ -26,6 +26,7 @@
         <property name="basenames">
             <list>
                 <value>appSettings</value>
+                <value>validationMessages</value>
             </list>
         </property>
     </bean>

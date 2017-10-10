@@ -6,6 +6,7 @@ import com.raihanorium.newsportal.util.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -43,7 +44,7 @@ public class StoryController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public RestResponse create(@RequestBody Story story) {
+    public RestResponse create(@Valid @RequestBody Story story) {
         RestResponse restResponse = new RestResponse();
         try {
             restResponse.addData(storyService.create(story));
