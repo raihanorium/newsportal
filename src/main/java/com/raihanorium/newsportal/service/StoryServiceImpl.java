@@ -2,10 +2,7 @@ package com.raihanorium.newsportal.service;
 
 import com.raihanorium.newsportal.model.Story;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ataul.raihan on 10/8/2017.
@@ -21,6 +18,7 @@ public class StoryServiceImpl implements StoryService {
         story.setTitle("Comet robot Philae phones home again");
         story.setBody("Europe’s comet lander has again been in touch with Earth. The Philae probe made three short contacts of about 10 seconds each at roughly 2130 GMT on Sunday. Controllers at the European Space Agency said the contacts were briefer than they had hoped, but proved the little robot was in encouragingly good health after its seven-month slumber. Philae landed on Comet 67P in November and worked for 60 hours before its battery ran flat.");
         story.setAuthor("Jonathan Amos");
+        story.setPublishedOn(new Date());
         stories.put(story.getId(), story);
 
         Story story2 = new Story();
@@ -28,6 +26,7 @@ public class StoryServiceImpl implements StoryService {
         story2.setTitle("Comet robot Philae phones home again2");
         story2.setBody("Europe’s comet lander has again been in touch with Earth. The Philae probe made three short contacts of about 10 seconds each at roughly 2130 GMT on Sunday. Controllers at the European Space Agency said the contacts were briefer than they had hoped, but proved the little robot was in encouragingly good health after its seven-month slumber. Philae landed on Comet 67P in November and worked for 60 hours before its battery ran flat.");
         story2.setAuthor("Jonathan Amos");
+        story2.setPublishedOn(new Date());
         stories.put(story2.getId(), story2);
     }
 

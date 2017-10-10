@@ -25,7 +25,8 @@ export class HomePageComponent implements OnInit {
         this.createNewsForm = this.fb.group({
             'title': [null, Validators.required],
             'body': [null, Validators.compose([Validators.required, Validators.minLength(40)])],
-            'author': [null, Validators.required]
+            'author': [null, Validators.required],
+            'publishedOn': [null, Validators.compose([Validators.required, Validators.pattern('^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{4})$')])]
         });
     }
 
