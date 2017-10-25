@@ -25,7 +25,8 @@ Please install Apache Maven, NPM, Angular CLI to execute commands.
 
 ### Step 2: Build the front end
 
-Navigate to `./src/main/ui/newsportal/` using a command line tool and run `ng build`. This will create a directory named `static` inside `./src/main/webapp` directory.
+Navigate to `./src/main/ui/newsportal/` using a command line tool and run `npm install` to install all the dependencies.
+After the dependencies are ready, run `ng build`. This will create a directory named `static` inside `./src/main/webapp` directory.
 
 ### Step 3: Build WAR archive
 
